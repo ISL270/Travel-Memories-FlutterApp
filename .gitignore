@@ -61,6 +61,7 @@ app/upload-keystore.jks
 **/ios/**/profile
 **/ios/**/xcuserdata
 **/ios/.generated/
+**/ios/Runner/AppDelegate.swift
 **/ios/Flutter/.last_build_id
 **/ios/Flutter/App.framework
 **/ios/Flutter/Flutter.framework
@@ -84,4 +85,5 @@ app/upload-keystore.jks
 **/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
 **/android/key.properties
+**/android/app/src/main/AndroidManifest.xml
 *.jks
