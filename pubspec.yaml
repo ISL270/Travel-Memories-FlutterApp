@@ -1,0 +1,31 @@
+name: flutter_complete_guide
+description: A new Flutter project.
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^4.0.0
+  image_picker: ^0.6.0+9
+  path_provider: ^1.1.0
+  path: ^1.6.2
+  sqflite: ^1.1.5
+  location: ^2.3.5
+  google_maps_flutter: ^0.5.17
+  http: ^0.12.0+2
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+
+flutter:
+
+  uses-material-design: true
