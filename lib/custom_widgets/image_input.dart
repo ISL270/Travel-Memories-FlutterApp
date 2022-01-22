@@ -39,11 +39,11 @@ class _ImageInputState extends State<ImageInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Container(
-          width: 150,
-          height: 100,
+          height: 190,
           decoration: BoxDecoration(
             border: Border.all(width: 1, color: Colors.grey),
           ),
@@ -62,14 +62,10 @@ class _ImageInputState extends State<ImageInput> {
         SizedBox(
           width: 10,
         ),
-        Expanded(
-          child: FlatButton.icon(
-            icon: Icon(Icons.camera),
-            label: Text('Take Picture'),
-            textColor: Theme.of(context).primaryColor,
+        ElevatedButton.icon(
             onPressed: _takePicture,
-          ),
-        ),
+            icon: Icon(Icons.camera),
+            label: Text('Take Picture')),
       ],
     );
   }

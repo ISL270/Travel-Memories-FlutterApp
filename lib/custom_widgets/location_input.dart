@@ -42,8 +42,8 @@ class _LocationInputState extends State<LocationInput> {
       MaterialPageRoute(
         fullscreenDialog: true,
         builder: (ctx) => MapScreen(
-              isSelecting: true,
-            ),
+          isSelecting: true,
+        ),
       ),
     );
     if (selectedLocation == null) {
@@ -56,9 +56,10 @@ class _LocationInputState extends State<LocationInput> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Container(
-          height: 170,
+          height: 190,
           width: double.infinity,
           alignment: Alignment.center,
           decoration: BoxDecoration(
@@ -76,23 +77,22 @@ class _LocationInputState extends State<LocationInput> {
                 ),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            FlatButton.icon(
+            TextButton.icon(
               icon: Icon(
                 Icons.location_on,
               ),
               label: Text('Current Location'),
-              textColor: Theme.of(context).primaryColor,
               onPressed: _getCurrentUserLocation,
             ),
-            FlatButton.icon(
+            TextButton.icon(
               icon: Icon(
                 Icons.map,
               ),
               label: Text('Select on Map'),
-              textColor: Theme.of(context).primaryColor,
               onPressed: _selectOnMap,
+              style: ButtonStyle(),
             ),
           ],
         ),

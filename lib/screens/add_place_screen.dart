@@ -52,32 +52,42 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
             child: SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.all(10),
-                child: Column(
-                  children: <Widget>[
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Title'),
-                      controller: _titleController,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    ImageInput(_selectImage),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    LocationInput(_selectPlace),
-                  ],
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height / 1.35,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      TextField(
+                        decoration: InputDecoration(labelText: 'Title'),
+                        controller: _titleController,
+                      ),
+                      ImageInput(_selectImage),
+                      LocationInput(_selectPlace),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-          RaisedButton.icon(
-            icon: Icon(Icons.add),
-            label: Text('Add Place'),
+          ElevatedButton.icon(
+            icon: Icon(
+              Icons.add,
+              size: 25,
+            ),
+            label: Text(
+              'Add Place',
+              style: TextStyle(fontSize: 18),
+            ),
             onPressed: _savePlace,
-            elevation: 0,
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            color: Theme.of(context).accentColor,
+            style: ButtonStyle(
+                elevation: MaterialStateProperty.all(0),
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                minimumSize:
+                    MaterialStateProperty.all(Size(double.infinity, 55))),
+            // elevation: 0,
+            // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
         ],
       ),

@@ -10,7 +10,7 @@ class PlacesListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Places'),
+        title: Text('Places You Visited'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
@@ -37,21 +37,20 @@ class PlacesListScreen extends StatelessWidget {
                     : ListView.builder(
                         itemCount: greatPlaces.items.length,
                         itemBuilder: (ctx, i) => ListTile(
-                              leading: CircleAvatar(
-                                backgroundImage: FileImage(
-                                  greatPlaces.items[i].image,
-                                ),
-                              ),
-                              title: Text(greatPlaces.items[i].title),
-                              subtitle:
-                                  Text(greatPlaces.items[i].location.address),
-                              onTap: () {
-                                Navigator.of(context).pushNamed(
-                                  PlaceDetailScreen.routeName,
-                                  arguments: greatPlaces.items[i].id,
-                                );
-                              },
+                          leading: CircleAvatar(
+                            backgroundImage: FileImage(
+                              greatPlaces.items[i].image,
                             ),
+                          ),
+                          title: Text(greatPlaces.items[i].title),
+                          subtitle: Text(greatPlaces.items[i].location.address),
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                              PlaceDetailScreen.routeName,
+                              arguments: greatPlaces.items[i].id,
+                            );
+                          },
+                        ),
                       ),
               ),
       ),
