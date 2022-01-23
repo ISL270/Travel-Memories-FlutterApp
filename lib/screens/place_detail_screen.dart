@@ -16,47 +16,54 @@ class PlaceDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(selectedPlace.title),
       ),
-      body: Column(
-        children: <Widget>[
-          Container(
-            height: 250,
-            width: double.infinity,
-            child: Image.file(
-              selectedPlace.image,
-              fit: BoxFit.cover,
-              width: double.infinity,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.red, width: 4)),
+              child: Image.file(
+                selectedPlace.image,
+                fit: BoxFit.cover,
+                height: 300,
+                width: double.infinity,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            selectedPlace.location.address,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.grey,
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          FlatButton(
-            child: Text('View on Map'),
-            textColor: Theme.of(context).primaryColor,
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  fullscreenDialog: true,
-                  builder: (ctx) => MapScreen(
-                        initialLocation: selectedPlace.location,
-                        isSelecting: false,
-                      ),
+            RichText(
+              text: TextSpan(children: [
+                TextSpan(
+                    text: 'Address: ', style: TextStyle(color: Colors.red,fontSize: 17,fontWeight: FontWeight.bold)),
+                TextSpan(
+                  text: selectedPlace.location.address,
+                  style: TextStyle(
+                    fontSize: 17,
+                    color: Colors.grey,
+                  ),
                 ),
-              );
-            },
-          ),
-        ],
+              ]),
+            ),
+            ElevatedButton.icon(
+              icon: Icon(
+                Icons.map,
+              ),
+              label: Text('View on Map'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    fullscreenDialog: true,
+                    builder: (ctx) => MapScreen(
+                      initialLocation: selectedPlace.location,
+                      isSelecting: false,
+                    ),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

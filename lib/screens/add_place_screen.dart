@@ -51,10 +51,10 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(20),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
-                    maxHeight: MediaQuery.of(context).size.height / 1.35,
+                    maxHeight: MediaQuery.of(context).size.height / 1.4,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,8 +86,6 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 minimumSize:
                     MaterialStateProperty.all(Size(double.infinity, 55))),
-            // elevation: 0,
-            // materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
         ],
       ),

@@ -34,15 +34,28 @@ class PlacesListScreen extends StatelessWidget {
                 ),
                 builder: (ctx, greatPlaces, ch) => greatPlaces.items.length <= 0
                     ? ch
-                    : ListView.builder(
+                    : ListView.separated(
+                        separatorBuilder: (context, index) {
+                          return Divider(
+                            thickness: 1.5,
+                            indent: 15,
+                            endIndent: 15,
+                          );
+                        },
+                        padding: EdgeInsets.symmetric(vertical: 15),
                         itemCount: greatPlaces.items.length,
                         itemBuilder: (ctx, i) => ListTile(
                           leading: CircleAvatar(
+                            radius: 27,
                             backgroundImage: FileImage(
                               greatPlaces.items[i].image,
                             ),
                           ),
-                          title: Text(greatPlaces.items[i].title),
+                          title: Text(
+                            greatPlaces.items[i].title,
+                            style: TextStyle(
+                                color: Colors.red, fontWeight: FontWeight.bold),
+                          ),
                           subtitle: Text(greatPlaces.items[i].location.address),
                           onTap: () {
                             Navigator.of(context).pushNamed(
