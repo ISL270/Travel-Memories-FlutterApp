@@ -35,7 +35,11 @@ class PlaceDetailScreen extends StatelessWidget {
             RichText(
               text: TextSpan(children: [
                 TextSpan(
-                    text: 'Address: ', style: TextStyle(color: Colors.red,fontSize: 17,fontWeight: FontWeight.bold)),
+                    text: 'Address: ',
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold)),
                 TextSpan(
                   text: selectedPlace.location.address,
                   style: TextStyle(
