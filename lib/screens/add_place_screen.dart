@@ -42,6 +42,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('Add a New Place'),
       ),
@@ -60,7 +61,11 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       TextField(
-                        decoration: InputDecoration(labelText: 'Title'),
+                        decoration: InputDecoration(
+                            labelText: 'Title',
+                            border: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(width: 1, color: Colors.grey))),
                         controller: _titleController,
                       ),
                       ImageInput(_selectImage),
@@ -87,6 +92,11 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                 minimumSize:
                     MaterialStateProperty.all(Size(double.infinity, 55))),
           ),
+          Container(
+            width: double.infinity,
+            height: 20,
+            color: Colors.red,
+          )
         ],
       ),
     );
