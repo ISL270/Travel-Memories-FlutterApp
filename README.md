@@ -11,7 +11,7 @@
 ## About
 I developed an app that leverages device's native features like camera and location, to allow users to journal their travel adventures. These information are then saved locally on the device into an SQLite database using [**SQflite**](https://pub.dev/packages/sqflite).
 
-I able to get the users location or let them mark it manually on map using [**Google Maps Platform**](https://developers.google.com/maps) APIs, in addetion to the [**location**](https://pub.dev/packages/location) package and [**google_maps_flutter**](https://pub.dev/packages/google_maps_flutter) package.
+I'm able to get the users location or let them mark it manually on map using [**Google Maps Platform**](https://developers.google.com/maps) APIs, in addetion to the [**location**](https://pub.dev/packages/location) package and [**google_maps_flutter**](https://pub.dev/packages/google_maps_flutter) package.
 
 **Note:** I didn't include my `api_keys.dart` file, so you have to make your own dart file that stores your keys, otherwise it won't work.
 
