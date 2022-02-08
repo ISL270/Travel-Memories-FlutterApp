@@ -2,11 +2,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
-
-import './providers/great_places.dart';
-import './screens/places_list_screen.dart';
-import './screens/add_place_screen.dart';
-import './screens/place_detail_screen.dart';
+import 'services/globals.dart';
+import 'providers/great_places.dart';
+import 'screens/places_list_screen.dart';
+import 'screens/add_place_screen.dart';
+import 'screens/place_detail_screen.dart';
 
 void main() {
   if (defaultTargetPlatform == TargetPlatform.android) {
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider.value(
       value: GreatPlaces(),
       child: MaterialApp(
+          scaffoldMessengerKey: snackbarKey,
           debugShowCheckedModeBanner: false,
           title: 'Travel Memories',
           theme: ThemeData(
