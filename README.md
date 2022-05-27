@@ -13,7 +13,7 @@ I developed an app that leverages device's native features like camera and locat
 
 I'm able to get the users location or let them mark it manually on map using [**Google Maps Platform**](https://developers.google.com/maps) APIs, in addition to the [**location**](https://pub.dev/packages/location), and [**google_maps_flutter**](https://pub.dev/packages/google_maps_flutter) packages.
 
-**Note:** I didn't include my `api_keys.dart` file, so you have to make your own dart file that stores your keys, otherwise it won't work. 
+**Note:** I didn't include my `api_keys.dart` file, so you have to make your own dart file that stores your keys, otherwise it won't work.  
 
 
 
